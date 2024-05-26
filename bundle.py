@@ -54,7 +54,6 @@ def main():
         "chainId": 1 
     }
 
-    # 签名交易
     tx1SignedFlashbots = sender.sign_transaction(tx1flashbots)
 
     tx2SignedFlashbots = victimSender.sign_transaction(tx2flashbots)
@@ -93,7 +92,7 @@ def main():
         headers = {'Content-Type': 'application/json', 'X-Flashbots-Signature': signed_message, 'User-Agent': 'Mozilla/5.0 3578.98 Safari/537.36'}
 
 
-        # annother miner address
+        # another miner address
         # https://rsync-builder.xyz/
         # https://rpc.titanbuilder.xyz
         flashbotsRequest = urllib.request.Request("https://rpc.beaverbuild.org", data=flashbotsBytes, headers=headers, method='POST')
